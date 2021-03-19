@@ -1,0 +1,5 @@
+<div class="week" *ngFor="let week of weeks">
+  <app-day *ngFor="let day of week.days; let i = index"
+	   [day]="day.day" [id]="day.id" class="day"
+	   [ngClass]="{'holyday': i == 0 || i == 6, 'end': i == 6 }"></app-day>
+</div>

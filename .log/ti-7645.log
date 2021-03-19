@@ -1,0 +1,35 @@
+[10:25:00.357] Global cache location '/home/orphen/.cache/typescript/4.2', safe file path '/usr/local/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/local/lib/node_modules/typescript/lib/typesMap.json
+[10:25:00.359] Processing cache location '/home/orphen/.cache/typescript/4.2'
+[10:25:00.359] Trying to find '/home/orphen/.cache/typescript/4.2/package.json'...
+[10:25:00.363] Loaded content of '/home/orphen/.cache/typescript/4.2/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.533"}}
+[10:25:00.363] Loaded content of '/home/orphen/.cache/typescript/4.2/package-lock.json'
+[10:25:00.363] Finished processing cache location '/home/orphen/.cache/typescript/4.2'
+[10:25:00.364] Process id: 7660
+[10:25:00.364] NPM location: /usr/local/bin/npm (explicit '--npmLocation' not  provided)
+[10:25:00.364] validateDefaultNpmLocation: false
+[10:25:00.364] Npm config file: /home/orphen/.cache/typescript/4.2/package.json
+[10:25:00.364] Updating types-registry npm package...
+[10:25:00.364] Exec: /usr/local/bin/npm install --ignore-scripts types-registry@latest
+[10:25:03.312]     Succeeded. stdout:
+    + types-registry@0.1.533
+    updated 1 package and audited 1 package in 1.853s
+found 0 vulnerabilities
+
+
+[10:25:03.313] Updated types-registry npm package
+[11:38:52.302] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":[],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orphen/Desarrollo/JavaScript/calendar/src/app/month","kind":"discover"}
+[11:38:52.367] Loaded safelist from types map file '/usr/local/lib/node_modules/typescript/lib/typesMap.json'
+[11:38:52.368] Explicitly included types: []
+[11:38:52.369] Inferred typings from unresolved imports: []
+[11:38:52.369] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/month/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/month/node_modules"]}
+[11:38:52.369] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/month/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/month/node_modules"]}
+[11:38:52.370] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/bower_components
+[11:38:52.372] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[11:38:52.378] Elapsed:: 5.4021570002660155ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[11:38:52.378] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/node_modules
+[11:38:52.378] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[11:38:52.378] Elapsed:: 0.166465999558568ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/month/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[11:38:52.378] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[11:38:52.379] Response has been sent.
+[11:38:52.379] No new typings were requested as a result of typings discovery
