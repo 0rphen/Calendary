@@ -33,3 +33,63 @@ found 0 vulnerabilities
     {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
 [11:38:52.379] Response has been sent.
 [11:38:52.379] No new typings were requested as a result of typings discovery
+[16:55:32.479] Got install request {"projectName":"/dev/null/inferredProject2*","fileNames":[],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux","kind":"discover"}
+[16:55:32.489] Explicitly included types: []
+[16:55:32.497] Inferred typings from unresolved imports: []
+[16:55:32.498] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/node_modules"]}
+[16:55:32.498] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/node_modules"]}
+[16:55:32.501] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/bower_components
+[16:55:32.503] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/bower_components 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[16:55:32.510] Elapsed:: 5.332488000392914ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/bower_components 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[16:55:32.511] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/node_modules
+[16:55:32.511] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/node_modules 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[16:55:32.512] Elapsed:: 0.702624998986721ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/schedulers/redux/node_modules 1 undefined Project: /dev/null/inferredProject2* watcher already invoked: false
+[16:55:32.513] Sending response:
+    {"projectName":"/dev/null/inferredProject2*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[16:55:32.514] Response has been sent.
+[16:55:32.514] No new typings were requested as a result of typings discovery
+[17:00:44.758] Got install request {"projectName":"/dev/null/inferredProject4*","fileNames":[],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orphen/Desarrollo/JavaScript/calendar/src/app/models","kind":"discover"}
+[17:00:44.760] Explicitly included types: []
+[17:00:44.762] Inferred typings from unresolved imports: []
+[17:00:44.762] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/models/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/models/node_modules"]}
+[17:00:44.764] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/models/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/models/node_modules"]}
+[17:00:44.764] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/bower_components
+[17:00:44.765] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/bower_components 1 undefined Project: /dev/null/inferredProject4* watcher already invoked: false
+[17:00:44.767] Elapsed:: 1.421425998210907ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/bower_components 1 undefined Project: /dev/null/inferredProject4* watcher already invoked: false
+[17:00:44.768] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/node_modules
+[17:00:44.769] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/node_modules 1 undefined Project: /dev/null/inferredProject4* watcher already invoked: false
+[17:00:44.771] Elapsed:: 1.2477120012044907ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/models/node_modules 1 undefined Project: /dev/null/inferredProject4* watcher already invoked: false
+[17:00:44.771] Sending response:
+    {"projectName":"/dev/null/inferredProject4*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[17:00:44.771] Response has been sent.
+[17:00:44.772] No new typings were requested as a result of typings discovery
+[17:02:35.291] Got install request {"projectName":"/dev/null/inferredProject3*","fileNames":[],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux","kind":"discover"}
+[17:02:35.291] Explicitly included types: []
+[17:02:35.292] Inferred typings from unresolved imports: []
+[17:02:35.292] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules"]}
+[17:02:35.292] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules"]}
+[17:02:35.292] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components
+[17:02:35.292] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components 1 undefined Project: /dev/null/inferredProject3* watcher already invoked: false
+[17:02:35.292] Elapsed:: 0.24189499765634537ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components 1 undefined Project: /dev/null/inferredProject3* watcher already invoked: false
+[17:02:35.293] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules
+[17:02:35.293] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules 1 undefined Project: /dev/null/inferredProject3* watcher already invoked: false
+[17:02:35.294] Elapsed:: 0.3331089988350868ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules 1 undefined Project: /dev/null/inferredProject3* watcher already invoked: false
+[17:02:35.294] Sending response:
+    {"projectName":"/dev/null/inferredProject3*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[17:02:35.294] Response has been sent.
+[17:02:35.294] No new typings were requested as a result of typings discovery
+[17:03:49.398] Got install request {"projectName":"/dev/null/inferredProject5*","fileNames":[],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux","kind":"discover"}
+[17:03:49.399] Explicitly included types: []
+[17:03:49.400] Inferred typings from unresolved imports: []
+[17:03:49.401] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules"]}
+[17:03:49.401] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components","/home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules"]}
+[17:03:49.402] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components
+[17:03:49.402] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components 1 undefined Project: /dev/null/inferredProject5* watcher already invoked: false
+[17:03:49.403] Elapsed:: 0.12699100002646446ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/bower_components 1 undefined Project: /dev/null/inferredProject5* watcher already invoked: false
+[17:03:49.403] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules
+[17:03:49.404] DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules 1 undefined Project: /dev/null/inferredProject5* watcher already invoked: false
+[17:03:49.404] Elapsed:: 0.04729999974370003ms DirectoryWatcher:: Added:: WatchInfo: /home/orphen/Desarrollo/JavaScript/calendar/src/app/pages/reminder/redux/node_modules 1 undefined Project: /dev/null/inferredProject5* watcher already invoked: false
+[17:03:49.405] Sending response:
+    {"projectName":"/dev/null/inferredProject5*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[17:03:49.405] Response has been sent.
+[17:03:49.406] No new typings were requested as a result of typings discovery
