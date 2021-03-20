@@ -16,6 +16,10 @@ export class MonthComponent implements OnInit, OnDestroy {
   weeks: Week[] = [];
   date: Date = new Date();
   subs: Subscription = new Subscription();
+  month: number = new Date().getMonth();
+  monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  days: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   constructor(private _store: Store<AppState>) { }
 
@@ -24,6 +28,7 @@ export class MonthComponent implements OnInit, OnDestroy {
     this.subs.add(this._store.select(monthKey).subscribe(months => {
       let days = months.days;
       this.weeks = [];
+      this.month = months.actualMonth;
       for (let i = 0; i < days.length; i += 7) {
         let week: Week = new Week({ days: days.slice(i, i + 7) });
         this.weeks.push(week);
@@ -35,21 +40,30 @@ export class MonthComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
+  prevMonth() {
+    this._store.dispatch(monthActions.prevMonth());
+    this.generateWeeks();
+  }
+  nextMonth() {
+    this._store.dispatch(monthActions.nextMonth());
+    this.generateWeeks();
+  }
+
   generateWeeks(): void {
-    let firstDay = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
-    let lastDay = new Date(this.date.getFullYear(), this.date.getMonth() + 1, 0);
+    let firstDay = new Date(this.date.getFullYear(), this.month, 1);
+    let lastDay = new Date(this.date.getFullYear(), this.month + 1, 0);
     let days: Day[] = [];
     if (firstDay.getDay() != 0)
       for (let i = 1; i <= firstDay.getDay(); i++) {
         let day = (firstDay.getDay() - i) * - 1;
-        let date = new Date(this.date.getFullYear(), this.date.getMonth(), day).getDate();
-        days.push(this.genDay(date, this.date.getMonth() - 1, false));
+        let date = new Date(this.date.getFullYear(), this.month, day).getDate();
+        days.push(this.genDay(date, this.month - 1, false));
       }
     for (let i = 1; i <= lastDay.getDate(); i++)
-      days.push(this.genDay(i, this.date.getMonth(), true));
+      days.push(this.genDay(i, this.month, true));
     if (lastDay.getDay() != 6)
       for (let i = 1; i <= 6 - lastDay.getDay(); i++)
-        days.push(this.genDay(i, this.date.getMonth() + 1, false));
+        days.push(this.genDay(i, this.month + 1, false));
     this._store.dispatch(monthActions.addDays({ days: days }))
   }
 

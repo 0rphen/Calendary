@@ -19,10 +19,14 @@ export class ReminderComponent implements OnInit, OnDestroy {
   isReminder: boolean = false;
   reminders: Reminder[] = [];
   subs: Subscription = new Subscription();
+  editIndex: number = 0;
+  isEdit: boolean = false;
 
   formBuilder: FormGroup = new FormGroup({
-    'reminder': new FormControl('', [Validators.maxLength(30), Validators.required])
+    'reminder': new FormControl('', [Validators.maxLength(30), Validators.required]),
+    'color': new FormControl('red', Validators.required)
   });
+  colors: string[] = ['red', 'blue', 'gray', 'indigo', 'purple', 'pink'];
 
   constructor(private _store: Store<AppState>) { }
 
@@ -31,6 +35,7 @@ export class ReminderComponent implements OnInit, OnDestroy {
       this.isReminder = month.isReminder;
       this.reminderId = month.id;
       this.formBuilder.reset();
+      this.isEdit = month.isEdit;
       this._store.select(getReminderById(this.reminderId)).subscribe(reminders => {
         this.reminders = [...reminders];
       });
@@ -43,10 +48,12 @@ export class ReminderComponent implements OnInit, OnDestroy {
 
   addReminder() {
     let text = this.formBuilder.get('reminder')?.value || '';
+    let color = this.formBuilder.get('color')?.value || 'red';
     let reminder = new Reminder({
       dateId: this.reminderId,
       remind: text,
-      datetime: new Date()
+      datetime: new Date(),
+      color: color
     })
     this._store.dispatch(reminderActions.addReminder({ reminder: reminder }));
     this.formBuilder.reset();
@@ -55,5 +62,25 @@ export class ReminderComponent implements OnInit, OnDestroy {
 
   removeReminder(remind: Reminder) {
     this._store.dispatch(reminderActions.removeReminder({ reminder: remind }));
+  }
+
+  editReminder() {
+    let text = this.formBuilder.get('reminder')?.value || '';
+    let color = this.formBuilder.get('color')?.value || 'red';
+    let reminder = new Reminder({
+      dateId: this.reminderId,
+      remind: text,
+      datetime: new Date(),
+      color: color
+    })
+    this._store.dispatch(reminderActions.editReminder({ reminder: reminder, index: this.editIndex }));
+    this.isEdit = false;
+    this.isReminder = false;
+  }
+
+  edit(remind: Reminder, index: number) {
+    this.editIndex = index;
+    this.formBuilder.get('reminder')?.setValue(remind.remind);
+    this.isEdit = true;
   }
 }

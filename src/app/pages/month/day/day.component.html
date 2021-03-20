@@ -1,8 +1,16 @@
 <div [ngClass]="{'dayOff': !isDisabled}" class="flex flex-col">
   {{day}}
+  <div *ngIf="reminders.length > 1">
+    <a href="#" title="Reminders...{{reminders.length}}">
+      <div class="relative bg-indigo-500 px-1 py-3 mr-1 mt-1 rounded-md text-white">Reminders...<span class="absolute right-1 bottom-2 rounded-full bg-blue-300 px-2 py-1">{{reminders.length}}</span>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="reminders.length <= 1">
   <a href="#" title="{{reminder.remind}}" *ngFor="let reminder of reminders">
-    <div class="relative bg-indigo-500 px-1 py-3 mr-1 mt-1 rounded-md text-white">{{reminder.remind | slice:0:15}}
+    <div class="relative bg-{{reminder.color}}-500 px-1 py-3 mr-1 mt-1 rounded-md text-white">{{reminder.remind | slice:0:15}}
       <span *ngIf="reminder.remind.length > 15">...</span>
     </div>
   </a>
+  </div>
 </div>

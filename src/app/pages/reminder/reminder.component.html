@@ -1,8 +1,15 @@
 <div class="px-8 sm:px-6 xl:px-8 pt-10" *ngIf="isReminder">
   <h1>Reminders</h1>
   <table class="w-full">
-    <tr *ngFor="let reminder of reminders" class="w-full">
-      <td class="w-2/3">{{reminder.remind}}</td><td class="w-1/3 right-1 text-indigo-900"><a href="#" (click)="removeReminder(reminder)">&times;</a></td>
+    <tr *ngFor="let reminder of reminders; let i = index" class="w-full">
+      <td class="w-2/3 flex flex-row">{{reminder.remind}}</td><td class="w-1/3 right-1 text-indigo-900">
+	<a href="#" (click)="removeReminder(reminder)" class="flex flex-row">
+	  <span class="iconify" data-icon="mdi:close"></span>
+	</a>
+      	<a href="#" (click)="edit(reminder, i)" class="flex flex-row">
+	  <span class="iconify" data-icon="mdi:edit"></span>
+	</a>
+      </td>
     </tr>
   </table>
   <label>Create a new Reminder on {{reminderId | date}}</label>
@@ -11,8 +18,13 @@
       <label class="block font-semibold mr-3 h-5 mt-2">new reminder:</label>
       <input type="text" name="reminder" placeholder="reminder" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none rounded-md"
 	     formControlName="reminder" maxlength="30" />
+      <select class="appearance-none w-full border bg-white rounded px-3 py-2 mt-2 ml-2 outline-none" formControlName="color">
+	<option class="py-1" *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+      </select>
       <input type="button" name="btn" placeholder="" value="add" [disabled]="formBuilder.invalid" (click)="addReminder()"
-	     class="mt-2 ml-3 bg-indigo-500 text-white py-2 px-6 rounded-lg hover:bg-indigo-600 disabled:opacity-50" />
+	     class="mt-2 ml-3 bg-indigo-500 text-white py-2 px-6 rounded-lg hover:bg-indigo-600 disabled:opacity-50" *ngIf="!isEdit" />
+      <input type="button" name="btn" placeholder="" value="save" [disabled]="formBuilder.invalid" (click)="editReminder()"
+	     class="mt-2 ml-3 bg-indigo-500 text-white py-2 px-6 rounded-lg hover:bg-indigo-600 disabled:opacity-50" *ngIf="isEdit" />
     </div>
   </form>
 </div>

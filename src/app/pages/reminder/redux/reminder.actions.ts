@@ -9,4 +9,7 @@ export const removeReminder = createAction(
   '[Reminder Component] removeReminder',
   props<{ reminder: Reminder }>()
 );
-
+export const editReminder = createAction(
+  '[Reminder Component] editReminder',
+  props<{ reminder: Reminder, index: number }>()
+);

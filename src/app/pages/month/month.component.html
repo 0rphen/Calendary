@@ -1,3 +1,7 @@
+<h1>Calendar <a href="#" (click)="prevMonth()"><</a> {{monthNames[month]}} <a href="#" (click)="nextMonth()">></a> </h1>
+<div class="week-name flex flex-row">
+  <div class="day w-1/7 mr-2" *ngFor="let dayName of days">{{dayName}}</div>
+</div>
 <div class="week flex flex-row" *ngFor="let week of weeks" >
   <app-day *ngFor="let day of week.days; let i = index" (click)="actionReminder(day.id)"
 	   [day]="day.day" [id]="day.id" class="day w-1/7"

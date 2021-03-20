@@ -9,3 +9,5 @@ export const setReminder = createAction(
   '[Month Component] setReminder',
   props<{ isReminder: boolean, id: string }>()
 );
+export const prevMonth = createAction('[Month Component] prevMonth');
+export const nextMonth = createAction('[Month Component] nextMonth');

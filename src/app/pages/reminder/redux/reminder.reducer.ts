@@ -15,7 +15,12 @@ export const initialState: State = {
 const _reminderReducer: ActionReducer<State, Action> = createReducer(
   initialState,
   on(reminderAction.addReminder, (state: State, { reminder }) => ({ ...state, reminder: [...state.reminder, reminder] })),
-  on(reminderAction.removeReminder, (state: State, { reminder }) => ({ ...state, reminder: [...state.reminder.filter(remind => remind !== reminder)] }))
+  on(reminderAction.removeReminder, (state: State, { reminder }) => ({ ...state, reminder: [...state.reminder.filter(remind => remind !== reminder)] })),
+  on(reminderAction.editReminder, (state: State, { reminder, index }) => ({
+    ...state, reminder: [...state.reminder.map((remind, i) => {
+      return (i != index) ? remind : reminder
+    })]
+  }))
 );
 
 export function reminderReducer(state: State | undefined, action: Action): State {
