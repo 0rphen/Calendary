@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { By } from '@angular/platform-browser';
 
 import { MonthComponent } from './month.component';
+import { DayComponent } from './day/day.component';
 
 describe('MonthComponent', () => {
   let component: MonthComponent;
   let fixture: ComponentFixture<MonthComponent>;
-  let store: MockStore;
   const initialState = {
     months: {
       days: [
@@ -27,13 +27,12 @@ describe('MonthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MonthComponent],
+      declarations: [MonthComponent, DayComponent],
       providers: [
         provideMockStore({ initialState })
       ]
     })
       .compileComponents();
-    store = TestBed.inject(MockStore);
   });
 
   beforeEach(() => {
