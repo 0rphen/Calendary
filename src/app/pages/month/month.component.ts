@@ -1,31 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as monthActions from './redux/month.actions';
 import { Day } from 'src/app/models/day';
 import { Week } from 'src/app/models/week';
 import { monthKey } from './redux/month.reducer';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-month',
   templateUrl: './month.component.html',
   styleUrls: ['./month.component.css']
 })
-export class MonthComponent implements OnInit {
+export class MonthComponent implements OnInit, OnDestroy {
   weeks: Week[] = [];
   date: Date = new Date();
+  subs: Subscription = new Subscription();
+
   constructor(private _store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.generateWeeks();
-    this._store.select(monthKey).subscribe(months => {
+    this.subs.add(this._store.select(monthKey).subscribe(months => {
       let days = months.days;
       this.weeks = [];
       for (let i = 0; i < days.length; i += 7) {
         let week: Week = new Week({ days: days.slice(i, i + 7) });
         this.weeks.push(week);
       }
-    });
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
   generateWeeks(): void {
@@ -51,7 +58,7 @@ export class MonthComponent implements OnInit {
     return new Day({ day, isDisabled, id });
   }
 
-  newReminder(id: string) {
+  actionReminder(id: string) {
     this._store.dispatch(monthActions.setReminder({ isReminder: true, id: id }));
   }
 }
