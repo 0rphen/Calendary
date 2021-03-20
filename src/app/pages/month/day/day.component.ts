@@ -27,9 +27,11 @@ export class DayComponent implements OnInit, OnDestroy {
       if (day?.isDisabled !== undefined)
         this.isDisabled = day.isDisabled;
     }));
-    this.subs.add(this._store.select(getReminderById(this.id)).subscribe(reminder => {
-      this.reminders = [...reminder];
-    }));
+    if (this.id != '' || this.id !== undefined)
+      this.subs.add(this._store.select(getReminderById(this.id)).subscribe(reminder => {
+        if (reminder.length > 0)
+          this.reminders = [...reminder];
+      }));
   }
 
   ngOnDestroy(): void {

@@ -48,6 +48,6 @@ describe('MonthComponent', () => {
 
   it('should generate Weeks', () => {
     component.generateWeeks();
-    expect(fixture.debugElement.queryAll(By.css('.day')).length).toBe(2);
+    expect(fixture.debugElement.queryAll(By.css('.day')).length).toBe(9);
   });
 });

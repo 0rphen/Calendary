@@ -13,12 +13,14 @@ describe('DayComponent', () => {
         {
           id: 'Sun Feb 28 2021',
           day: 28,
-          isDisabled: false
+          isDisabled: false,
+          color: 'red'
         },
         {
           id: 'Mon Mar 01 2021',
           day: 1,
-          isDisabled: true
+          isDisabled: true,
+          color: 'blue'
         }
       ]
     }

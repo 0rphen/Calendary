@@ -32,13 +32,14 @@ export class ReminderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs.add(this._store.select(monthKey).subscribe(month => {
-      this.isReminder = month.isReminder;
-      this.reminderId = month.id;
+      this.isReminder = month?.isReminder || false;
+      this.reminderId = month?.id || '';
       this.formBuilder.reset();
-      this.isEdit = month.isEdit;
-      this._store.select(getReminderById(this.reminderId)).subscribe(reminders => {
-        this.reminders = [...reminders];
-      });
+      this.isEdit = month?.isEdit || false;
+      if (this.reminderId)
+        this._store.select(getReminderById(this.reminderId)).subscribe(reminders => {
+          this.reminders = [...reminders];
+        });
     }));
   }
 
