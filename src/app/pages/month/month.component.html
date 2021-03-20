@@ -1,5 +1,6 @@
-<div class="week" *ngFor="let week of weeks">
+<div class="week" *ngFor="let week of weeks" >
   <app-day *ngFor="let day of week.days; let i = index"
 	   [day]="day.day" [id]="day.id" class="day"
-	   [ngClass]="{'holyday': i == 0 || i == 6, 'end': i == 6 }"></app-day>
+	   [ngClass]="{'holyday': i == 0 || i == 6, 'end': i == 6 }"
+  (click)="newReminder(day.id)"></app-day>
 </div>

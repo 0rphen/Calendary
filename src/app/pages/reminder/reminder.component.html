@@ -1,10 +1,12 @@
-<div class="px-8 sm:px-6 xl:px-8 pt-10">
+<div class="px-8 sm:px-6 xl:px-8 pt-10" *ngIf="isReminder">
+  <label>Create a new Reminder on {{reminderId | date}}</label>
   <form class="relative py-3 sm:max-w-xl" [formGroup]="formBuilder">
     <div class="text-2l font-light flex flex-row justify-between">
-      <label class="block font-semibold mr-3 h-5 mt-2">new remidner:</label>
-      <input type="text" name="remidner" placeholder="remidner" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none rounded-md"
-	     formControlName="remidner" maxlength="30" />
-      <input type="button" name="btn" placeholder="" value="add" class="mt-2 ml-3 bg-indigo-500 text-white py-2 px-6 rounded-lg hover:bg-indigo-600" />
+      <label class="block font-semibold mr-3 h-5 mt-2">new reminder:</label>
+      <input type="text" name="reminder" placeholder="reminder" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none rounded-md"
+	     formControlName="reminder" maxlength="30" />
+      <input type="button" name="btn" placeholder="" value="add" [disabled]="formBuilder.invalid" (click)="addReminder()"
+	     class="mt-2 ml-3 bg-indigo-500 text-white py-2 px-6 rounded-lg hover:bg-indigo-600 disabled:opacity-50" />
     </div>
   </form>
 </div>

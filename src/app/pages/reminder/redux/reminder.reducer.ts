@@ -1,6 +1,8 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 import { Reminder } from 'src/app/models/reminder';
 import * as reminderAction from './reminder.actions';
+
+export const reminderKey = 'reminder';
 
 export interface State {
   reminder: Reminder[]
@@ -10,11 +12,11 @@ export const initialState: State = {
   reminder: []
 }
 
-const _reminderReducer = createReducer(
+const _reminderReducer: ActionReducer<State, Action> = createReducer(
   initialState,
-  on(reminderAction.addReminder, (state, { reminder }) => ({ ...state, reminder: [...state.reminder, reminder] }))
+  on(reminderAction.addReminder, (state: State, { reminder }) => ({ ...state, reminder: [...state.reminder, reminder] }))
 );
 
-export function reminderReducer(state: State, action: Action) {
+export function reminderReducer(state: State | undefined, action: Action): State {
   return _reminderReducer(state, action);
 }

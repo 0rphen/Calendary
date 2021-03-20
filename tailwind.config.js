@@ -10,6 +10,7 @@ module.exports = {
         extend: {},
     },
     variants: {
+        opacity: ({ after }) => after(['disabled']),
         extend: {},
     },
     plugins: [require('@tailwindcss/typography')],

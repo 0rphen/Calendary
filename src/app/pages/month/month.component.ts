@@ -50,4 +50,8 @@ export class MonthComponent implements OnInit {
     let id: string = new Date(this.date.getFullYear(), month, day).toDateString();
     return new Day({ day, isDisabled, id });
   }
+
+  newReminder(id: string) {
+    this._store.dispatch(monthActions.setReminder({ isReminder: true, id: id }));
+  }
 }
