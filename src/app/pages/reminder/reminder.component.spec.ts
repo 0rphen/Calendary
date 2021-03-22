@@ -249,4 +249,5 @@ describe('ReminderComponent', (): void => {
     expect(state.mode).toEqual(reducer.reminderMode.EDIT);
     expect(state.id).toEqual('');
   });
+
 });

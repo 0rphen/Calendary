@@ -42,7 +42,6 @@
 	    <label class="text-3l font-semibold mx-2 mt-4">to: </label>
 	    <input type="time" name="time" class="appearance-none rounded pl-2 pr-2 py-2 w-full border mt-2 ml-2" formControlName="to" />
 	  </div>
-	  <div>{{formBuilder.get('from')?.value}} - {{formBuilder.get('to')?.value}} {{(formBuilder.get('to')?.value < formBuilder.get('from')?.value)?'error':'good'}}</div>
 	</form>
       </div>
       <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">

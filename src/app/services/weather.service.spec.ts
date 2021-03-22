@@ -20,5 +20,5 @@ describe('WeatherService', () => {
 
   it('should be call the service', () => {
     expect(service.getWeather()).toBeTruthy();
-  })
+  });
 });

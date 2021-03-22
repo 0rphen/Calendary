@@ -13,4 +13,8 @@ describe('PValidatorsService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should be call the service', () => {
+    expect(service.overTime('from', 'init')).toBeTruthy();
+  })
 });
