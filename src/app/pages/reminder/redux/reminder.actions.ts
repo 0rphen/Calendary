@@ -26,3 +26,4 @@ export const setModeReminder = createAction(
   '[Reminder Component] editModeReminder',
   props<{ mode: reminderMode, id?: string }>()
 );
+export const setNoHasTime = createAction('[Reminder Component] setNoHasTime');

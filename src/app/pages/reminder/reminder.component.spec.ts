@@ -35,7 +35,8 @@ describe('ReminderComponent', (): void => {
     const stateAction: Reminder = {
       id: '123123',
       remind: 'dentist',
-      datetime: new Date(),
+      datetimeFrom: new Date(),
+      datetimeTo: new Date(),
       dateId: 'Mon Mar 01 2021',
       color: 'red'
     };
@@ -50,14 +51,16 @@ describe('ReminderComponent', (): void => {
         {
           id: '123123',
           remind: 'dentist',
-          datetime: new Date(),
+          datetimeFrom: new Date(),
+          datetimeTo: new Date(),
           dateId: 'Mon Mar 01 2021',
           color: 'red'
         }
       ],
       reminderId: '',
       mode: 0,
-      displayForm: false
+      displayForm: false,
+      hasTime: true
     };
     const action = reducerAction.removeReminder({ id: '123123' });
     const state = reducer.reminderReducer(initState, action);
@@ -80,6 +83,8 @@ describe('ReminderComponent', (): void => {
     let spy = spyOn(store, 'dispatch').and.callFake(() => { });
     component.formBuilder.get('remind')?.setValue('test');
     component.formBuilder.get('color')?.setValue('red');
+    component.formBuilder.get('from')?.setValue('12:00');
+    component.formBuilder.get('to')?.setValue('13:00');
     component.addReminder();
     expect(spy).toHaveBeenCalled();
   });
@@ -89,7 +94,8 @@ describe('ReminderComponent', (): void => {
     const stateAction: Reminder = {
       id: '123123',
       remind: 'dentist',
-      datetime: new Date(),
+      datetimeFrom: new Date(),
+      datetimeTo: new Date(),
       dateId: 'Mon Mar 01 2021',
       color: 'red'
     };
@@ -107,6 +113,8 @@ describe('ReminderComponent', (): void => {
     let spy = spyOn(store, 'dispatch').and.callFake(() => { });
     component.formBuilder.get('remind')?.setValue('test');
     component.formBuilder.get('color')?.setValue('red');
+    component.formBuilder.get('from')?.setValue('12:00');
+    component.formBuilder.get('to')?.setValue('13:00');
     component.editReminder();
     expect(spy).toHaveBeenCalled();
   });
@@ -137,7 +145,8 @@ describe('ReminderComponent', (): void => {
     const stateAction: Reminder = {
       id: '123123',
       remind: 'dentist',
-      datetime: new Date(),
+      datetimeFrom: new Date(),
+      datetimeTo: new Date(),
       dateId: 'Mon Mar 01 2021',
       color: 'red'
     };
@@ -157,26 +166,30 @@ describe('ReminderComponent', (): void => {
         {
           id: '123134',
           remind: 'test2',
-          datetime: new Date(),
+          datetimeFrom: new Date(),
+          datetimeTo: new Date(),
           dateId: 'Mon Mar 01 2021',
           color: 'blue'
         },
         {
           id: '123123',
           remind: 'dentist',
-          datetime: new Date(),
+          datetimeFrom: new Date(),
+          datetimeTo: new Date(),
           dateId: 'Mon Mar 01 2021',
           color: 'red'
         }
       ],
       reminderId: '',
       mode: 0,
-      displayForm: false
+      displayForm: false,
+      hasTime: true
     };
     const editState: Reminder = {
       id: '123123',
       remind: 'test',
-      datetime: new Date(),
+      datetimeFrom: new Date(),
+      datetimeTo: new Date(),
       dateId: 'Mon Mar 01 2021',
       color: 'red'
     };
@@ -191,21 +204,24 @@ describe('ReminderComponent', (): void => {
         {
           id: '123123',
           remind: 'test1',
-          datetime: new Date(),
+          datetimeFrom: new Date(),
+          datetimeTo: new Date(),
           dateId: 'Mon Mar 01 2021',
           color: 'red'
         },
         {
           id: '123134',
           remind: 'test2',
-          datetime: new Date(),
+          datetimeFrom: new Date(),
+          datetimeTo: new Date(),
           dateId: 'Mon Mar 01 2021',
           color: 'blue'
         }
       ],
       reminderId: '',
       mode: 0,
-      displayForm: false
+      displayForm: false,
+      hasTime: true
     };
     const action = reducerAction.removeAllReminder({ reminderId: 'Mon Mar 01 2021' });
     const state = reducer.reminderReducer(initState, action);
