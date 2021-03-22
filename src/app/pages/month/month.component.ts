@@ -1,11 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
+
 import { AppState } from 'src/app/app.reducer';
-import * as monthActions from './redux/month.actions';
 import { Day } from 'src/app/models/day';
 import { Week } from 'src/app/models/week';
 import { monthKey } from './redux/month.reducer';
-import { Subscription } from 'rxjs';
+
+import * as monthActions from './redux/month.actions';
+import * as reminderActions from '../reminder/redux/reminder.actions';
+import { reminderMode } from '../reminder/redux/reminder.reducer';
 
 @Component({
   selector: 'app-month',
@@ -73,6 +77,6 @@ export class MonthComponent implements OnInit, OnDestroy {
   }
 
   actionReminder(id: string) {
-    this._store.dispatch(monthActions.setReminder({ isReminder: true, id: id }));
+    this._store.dispatch(reminderActions.displayReminderForm({ displayForm: true, reminderId: id, mode: reminderMode.INSERT }));
   }
 }

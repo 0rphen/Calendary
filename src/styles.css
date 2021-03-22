@@ -30,8 +30,10 @@
     margin-right: 5px;
     border-width: 0 1px 0 0;
 }
-
-.week-name :last-child, .end {
+.week-name :last-child {
+    border-width: 0;
+}
+.end {
     border-width: 1px 0 0 0;
 }
 
