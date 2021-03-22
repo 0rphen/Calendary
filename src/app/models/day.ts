@@ -1,8 +1,6 @@
 export class Day {
   id: string;
   day: number;
-  date?: number;
-  schedule?: string[];
   isDisabled: boolean;
   constructor(obj: Day) {
     this.id = obj.id || '';

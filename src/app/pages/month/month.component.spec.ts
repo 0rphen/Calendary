@@ -78,8 +78,6 @@ describe('MonthComponent', () => {
       {
         id: '1234',
         day: 1,
-        date: 1,
-        schedule: ['test1', 'test2'],
         isDisabled: true
       }
     ];
