@@ -111,6 +111,12 @@ describe('ReminderComponent', (): void => {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('should not continue if remind has more of 30 chars', () => {
+    const remind = component.formBuilder.get('remind');
+    remind?.setValue('testtesttesttesttesttesttesttesttesttest');
+    expect(remind?.valid).toBeFalsy();
+  });
+
   it('should call reminderAction on mode insert', () => {
     let spy = spyOn(component, 'addReminder').and.callFake(() => { });
     component.mode = reducer.reminderMode.INSERT;
