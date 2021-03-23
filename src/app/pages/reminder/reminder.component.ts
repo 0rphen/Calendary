@@ -56,15 +56,16 @@ export class ReminderComponent implements OnInit, OnDestroy {
     let color = this.formBuilder.get('color')!.value;
     let dateFrom = this.stringToDate(this.formBuilder.get('from')!.value);
     let dateTo = this.stringToDate(this.formBuilder.get('to')!.value);
+    let id = this.reminderId + Date.now();
     let reminder = new Reminder({
-      id: this.reminderId + Date.now(),
+      id: id,
       dateId: this.reminderId,
       remind: text,
       datetimeFrom: dateFrom,
       datetimeTo: dateTo,
       color: color
     });
-    if (this.hasTimeDate(dateFrom, dateTo)) {
+    if (this.hasTimeDate(dateFrom, dateTo, id)) {
       this._store.dispatch(reminderActions.addReminder({ reminder: reminder }));
       this.formBuilder.reset();
     } else
@@ -92,7 +93,7 @@ export class ReminderComponent implements OnInit, OnDestroy {
       datetimeTo: dateTo,
       color: color
     });
-    if (this.hasTimeDate(dateFrom, dateTo))
+    if (this.hasTimeDate(dateFrom, dateTo, this.id))
       this._store.dispatch(reminderActions.editReminder({ reminder: reminder }));
     else
       this._store.dispatch(reminderActions.setNoHasTime());
@@ -129,11 +130,12 @@ export class ReminderComponent implements OnInit, OnDestroy {
     return hour + ':' + minutes;
   }
 
-  hasTimeDate(dateFrom: Date, dateTo: Date): boolean {
+  hasTimeDate(dateFrom: Date, dateTo: Date, id: string): boolean {
     let isEmpty: boolean = true;
     this.reminders.forEach(reminder => {
-      if ((dateTo >= reminder.datetimeFrom && dateFrom < reminder.datetimeTo) ||
-        (dateTo < reminder.datetimeFrom && dateFrom >= reminder.datetimeTo))
+      if (((dateTo >= reminder.datetimeFrom && dateFrom < reminder.datetimeTo) ||
+        (dateTo < reminder.datetimeFrom && dateFrom >= reminder.datetimeTo)) &&
+        id !== reminder.id)
         isEmpty = false;
     })
     return isEmpty;

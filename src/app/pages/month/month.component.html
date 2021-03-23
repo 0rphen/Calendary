@@ -1,4 +1,12 @@
-<h1>Calendar <a href="#" (click)="prevMonth()"><</a> {{monthNames[month]}} <a href="#" (click)="nextMonth()">></a> </h1>
+<h1>
+  <div class="w-full flex flex-row">
+    <a class="w-1/3" href="#" (click)="prevMonth()"><</a>
+    <span class="w-1/3 text-center">{{monthNames[month]}}</span>
+    <div class="w-1/3 text-right">
+      <a  href="#" (click)="nextMonth()">></a>      
+    </div>
+  </div>
+</h1>
 <div class="week-name flex flex-row">
   <div class="day w-1/7 mr-2" *ngFor="let dayName of days">{{dayName}}</div>
 </div>
